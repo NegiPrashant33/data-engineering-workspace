@@ -4,3 +4,10 @@
 __pycache__/
 *.py[codz]
 *$py.class
+
+# Docker volumes
+ny_taxi_postgres_data/
+**/ny_taxi_postgres_data/
+
+# Jupyter junk
+.ipynb_checkpoints/
