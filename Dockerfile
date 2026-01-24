@@ -14,13 +14,13 @@ WORKDIR /app
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Copy dependency files first (better layer caching)
-COPY pyproject.toml .python-version uv.lock ./
+COPY /pyproject.toml /.python-version /uv.lock ./
 
 # Install dependencies from lock file (ensures reproducible builds)
 RUN uv sync --locked
 
 # copy the script to the container. 1st name is source file, 2nd is destination
-COPY 01-docker-data-pipeline/pipeline/pipeline.py pipeline.py
+COPY 01-docker-data-pipeline/pipeline/ingest_data.py ingest_data.py
 
 # define what to do first when the container runs
-ENTRYPOINT ["python", "pipeline.py"]
+ENTRYPOINT ["python", "ingest_data.py"]
