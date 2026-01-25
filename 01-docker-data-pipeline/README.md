@@ -162,7 +162,7 @@ TL;DR
 One-Liner to Remember
 > **If it’s inside Docker, localhost is almost always wrong.**
 
-## Docker run command 
+## Docker run command
 
 ```bash
 docker run -it --rm 
